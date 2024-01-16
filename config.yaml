@@ -1,0 +1,73 @@
+seeder:
+  file: ./seeder/seeder.rb
+  disabled: false
+parsers:
+  - page_type: listings
+    file: ./parsers/listings.rb
+    disabled: false
+  - page_type: details
+    file: ./parsers/details.rb
+    disabled: false
+exporters:
+  - file: ./exporters/products_last10_json.yaml
+    disabled: false
+  - file: ./exporters/products_json.yaml
+    disabled: false
+  - file: ./exporters/products_csv.yaml
+    disabled: false
+  - file: ./exporters/details_content.yaml
+    disabled: false
+  - exporter_name: listings_json_ef_ns
+    exporter_type: json
+    collection: listings
+    write_mode: pretty_array
+    export_filename: my_json_SID:<sid>_NAME:<name>_JID:<jid>_DATE:<d:yyyyMMdd hh:mm>
+    no_subfolder: true
+    no_tar: true
+  - exporter_name: listings_json_ef_ee
+    exporter_type: json
+    collection: listings
+    write_mode: pretty_array
+    export_filename: my_json_SID:<sid>_NAME:<name>_JID:<jid>_DATE:<d:yyyyMMdd hh:mm>
+    export_extension: x.bingo
+    no_tar: true
+  - exporter_name: listings_json_ns_ee
+    exporter_type: json
+    collection: listings
+    write_mode: pretty_array
+    no_subfolder: true
+    export_extension: test.txt
+    no_tar: true
+  - exporter_name: listings_json_ef_ns_ee
+    exporter_type: json
+    collection: listings
+    write_mode: pretty_array
+    export_filename: my_json_SID:<sid>_NAME:<name>_JID:<jid>_DATE:<d:yyyyMMdd hh:mm>
+    no_subfolder: true
+    export_extension: cheat
+    no_tar: true
+  - exporter_name: listings_json_ef_ns_t
+    exporter_type: json
+    collection: listings
+    write_mode: pretty_array
+    export_filename: my_json_SID:<sid>_NAME:<name>_JID:<jid>_DATE:<d:yyyyMMdd hh:mm>
+    no_subfolder: true
+  - exporter_name: listings_json_ef_ee_t
+    exporter_type: json
+    collection: listings
+    write_mode: pretty_array
+    export_filename: my_json_SID:<sid>_NAME:<name>_JID:<jid>_DATE:<d:yyyyMMdd hh:mm>
+    export_extension: x.bingo
+  - exporter_name: listings_json_ns_ee_t
+    exporter_type: json
+    collection: listings
+    write_mode: pretty_array
+    no_subfolder: true
+    export_extension: test.txt
+  - exporter_name: listings_json_ef_ns_ee_t
+    exporter_type: json
+    collection: listings
+    write_mode: pretty_array
+    export_filename: my_json_SID:<sid>_NAME:<name>_JID:<jid>_DATE:<d:yyyyMMdd hh:mm>
+    no_subfolder: true
+    export_extension: cheat
